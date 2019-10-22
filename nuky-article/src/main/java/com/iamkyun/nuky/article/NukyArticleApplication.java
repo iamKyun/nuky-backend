@@ -1,13 +1,13 @@
-package com.iamkyun.nuky;
+package com.iamkyun.nuky.article;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NukyApplication {
+public class NukyArticleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NukyApplication.class, args);
+        SpringApplication.run(NukyArticleApplication.class, args);
     }
 
 }
