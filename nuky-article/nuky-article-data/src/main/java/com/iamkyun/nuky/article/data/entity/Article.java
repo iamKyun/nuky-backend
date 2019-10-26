@@ -1,43 +1,70 @@
 package com.iamkyun.nuky.article.data.entity;
 
-import java.util.Date;
-import java.util.List;
+import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Objects;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
 /**
  * @author kyun
+ *
  */
 @Data
+@Entity
 public class Article {
-    /**
-     * author
-     */
-    private String author;
+    @Id
+    @Column(name = "id")
+    private Long id;
 
-    /**
-     * title
-     */
+    @Basic
+    @Column(name = "title")
     private String title;
 
-    /**
-     * content
-     */
+    @Basic
+    @Column(name = "content")
     private String content;
 
-    /**
-     * post date
-     */
-    private Date postDate;
+    @Basic
+    @Column(name = "create_date")
+    private Timestamp createDate;
 
-    /**
-     * tags
-     */
-    private List<String> tags;
+    @Basic
+    @Column(name = "post_date")
+    private Timestamp postDate;
 
-    /**
-     * comments
-     */
-    private List<Comment> comments;
+    @ManyToOne
+    private User user;
 
+    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
+    private Collection<Comment> comments;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Article article = (Article) o;
+        return Objects.equals(id, article.id) &&
+                Objects.equals(title, article.title) &&
+                Objects.equals(content, article.content) &&
+                Objects.equals(createDate, article.createDate) &&
+                Objects.equals(postDate, article.postDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, content, createDate, postDate);
+    }
 }
