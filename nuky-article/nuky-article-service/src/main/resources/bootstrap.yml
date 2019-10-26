@@ -1,6 +1,3 @@
-server:
-  port: 8100
-
 eureka:
   client:
     service-url:
@@ -9,3 +6,9 @@ eureka:
 spring:
   application:
     name: article
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
