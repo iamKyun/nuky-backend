@@ -2,7 +2,7 @@ package com.iamkyun.nuky.article.web;
 
 import java.util.List;
 
-import com.iamkyun.nuky.article.data.entity.Article;
+import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.article.service.ArticleService;
 
 import org.springframework.beans.factory.annotation.Value;

@@ -13,10 +13,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.iamkyun.nuky.data.dao")
 @EntityScan({"com.iamkyun.nuky.data.entity"})
 @EnableJpaAuditing
-public class NukyArticleServiceApplication {
+public class NukyUserServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NukyArticleServiceApplication.class, args);
+        SpringApplication.run(NukyUserServiceApplication.class, args);
     }
 
 }

@@ -1,17 +1,18 @@
-package com.iamkyun.nuky.article.data.dao;
+package com.iamkyun.nuky.data.dao;
 
 import java.util.List;
 
-import com.iamkyun.nuky.article.data.entity.Article;
+import com.iamkyun.nuky.data.entity.Article;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author kyun
  *
  */
-
+@Repository
 public interface ArticleDao extends JpaRepository<Article, Long> {
     /**
      *  return top 5 records
