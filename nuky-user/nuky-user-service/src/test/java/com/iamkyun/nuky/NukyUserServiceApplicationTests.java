@@ -1,8 +1,8 @@
-package com.iamkyun.nuky.article;
+package com.iamkyun.nuky;
 
 import java.util.Optional;
 
-import com.iamkyun.nuky.data.dao.UserDao;
+import com.iamkyun.nuky.dao.UserDao;
 import com.iamkyun.nuky.data.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;

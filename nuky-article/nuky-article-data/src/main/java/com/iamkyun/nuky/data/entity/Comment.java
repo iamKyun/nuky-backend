@@ -1,5 +1,6 @@
 package com.iamkyun.nuky.data.entity;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -7,11 +8,15 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
+
+import org.springframework.data.annotation.CreatedDate;
 
 /**
  * @author kyun
@@ -22,6 +27,7 @@ import lombok.Data;
 public class Comment {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Basic
@@ -40,6 +46,11 @@ public class Comment {
     @ManyToOne
     private User user;
 
+    @Column(name = "create_date")
+    @Basic
+    @CreatedDate
+    private Timestamp createDate;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -54,11 +65,12 @@ public class Comment {
                 Objects.equals(getArticle(), comment.getArticle()) &&
                 Objects.equals(getReplyComment(), comment.getReplyComment()) &&
                 Objects.equals(getComments(), comment.getComments()) &&
-                Objects.equals(getUser(), comment.getUser());
+                Objects.equals(getUser(), comment.getUser()) &&
+                Objects.equals(getCreateDate(), comment.getCreateDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getContent(), getArticle(), getReplyComment(), getComments(), getUser());
+        return Objects.hash(getId(), getContent(), getArticle(), getReplyComment(), getComments(), getUser(), getCreateDate());
     }
 }

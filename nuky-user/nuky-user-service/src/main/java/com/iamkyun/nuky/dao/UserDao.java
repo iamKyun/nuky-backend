@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.data.dao;
+package com.iamkyun.nuky.dao;
 
 import com.iamkyun.nuky.data.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

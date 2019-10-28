@@ -8,11 +8,15 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.Data;
+
+import org.springframework.data.annotation.CreatedDate;
 
 /**
  * @author kyun
@@ -22,6 +26,7 @@ import lombok.Data;
 @Entity
 public class Article {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -35,6 +40,7 @@ public class Article {
 
     @Basic
     @Column(name = "create_date")
+    @CreatedDate
     private Timestamp createDate;
 
     @Basic

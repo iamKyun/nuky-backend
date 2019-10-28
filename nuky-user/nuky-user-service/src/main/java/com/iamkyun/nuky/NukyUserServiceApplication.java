@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.article;
+package com.iamkyun.nuky;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,13 +10,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @author kyun
  */
 @SpringBootApplication
-@EnableJpaRepositories("com.iamkyun.nuky.data.dao")
+@EnableJpaRepositories("com.iamkyun.nuky.dao")
 @EntityScan({"com.iamkyun.nuky.data.entity"})
 @EnableJpaAuditing
-public class NukyArticleServiceApplication {
+public class NukyUserServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NukyArticleServiceApplication.class, args);
+        SpringApplication.run(NukyUserServiceApplication.class, args);
     }
 
 }

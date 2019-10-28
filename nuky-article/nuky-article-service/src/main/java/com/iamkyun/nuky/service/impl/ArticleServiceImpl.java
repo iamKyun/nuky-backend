@@ -1,13 +1,11 @@
-package com.iamkyun.nuky.article.service.impl;
+package com.iamkyun.nuky.service.impl;
 
 import java.util.List;
 
-import com.iamkyun.nuky.article.service.ArticleService;
-import com.iamkyun.nuky.data.dao.ArticleDao;
+import com.iamkyun.nuky.dao.ArticleDao;
 import com.iamkyun.nuky.data.entity.Article;
+import com.iamkyun.nuky.service.ArticleService;
 
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 
 /**
@@ -22,7 +20,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
 
+    @Override
     public List<Article> getIndexArticles() {
-        return articleDao.findFirst5(Sort.by(Order.desc("postDate")));
+        return articleDao.findTop5ByPostDateNotNullOrderByPostDateDesc();
     }
 }

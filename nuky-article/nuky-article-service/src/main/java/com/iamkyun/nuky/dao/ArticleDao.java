@@ -1,10 +1,9 @@
-package com.iamkyun.nuky.data.dao;
+package com.iamkyun.nuky.dao;
 
 import java.util.List;
 
 import com.iamkyun.nuky.data.entity.Article;
 
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -20,5 +19,5 @@ public interface ArticleDao extends JpaRepository<Article, Long> {
      * @param sort sort
      * @return
      */
-    List<Article> findFirst5(Sort sort);
+    List<Article> findTop5ByPostDateNotNullOrderByPostDateDesc();
 }
