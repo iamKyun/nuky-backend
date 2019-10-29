@@ -6,17 +6,22 @@ import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 /**
  * @author kyun
  */
 @Data
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +34,7 @@ public class User {
 
     @Basic
     @Column(name = "create_date")
+    @CreatedDate
     private Timestamp createDate;
 
     @Basic

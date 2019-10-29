@@ -7,6 +7,7 @@ import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ import javax.persistence.OneToMany;
 import lombok.Data;
 
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
  * @author kyun
@@ -24,6 +26,7 @@ import org.springframework.data.annotation.CreatedDate;
  */
 @Data
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Comment {
     @Id
     @Column(name = "id")

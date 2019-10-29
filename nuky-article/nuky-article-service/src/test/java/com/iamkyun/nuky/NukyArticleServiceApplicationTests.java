@@ -2,9 +2,11 @@ package com.iamkyun.nuky;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.iamkyun.nuky.dao.ArticleDao;
+import com.iamkyun.nuky.dao.CommentDao;
 import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.data.entity.Comment;
 import com.iamkyun.nuky.data.entity.User;
@@ -14,6 +16,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = NukyArticleServiceApplication.class)
@@ -22,8 +25,12 @@ public class NukyArticleServiceApplicationTests {
     @Autowired
     ArticleDao articleDao;
 
+    @Autowired
+    CommentDao commentDao;
+
     @Test
-    public void contextLoads() {
+    @Transactional
+    public void testSaveEntiries() {
         User kyun = new User();
         kyun.setId(1L);
         User wahnna = new User();
@@ -32,8 +39,10 @@ public class NukyArticleServiceApplicationTests {
         Article article = new Article();
         article.setTitle("hahaha");
         article.setContent("ddddddddddddddddddddddddddddddddddddddd");
-        article.setPostDate(new Timestamp(new java.util.Date().getTime()));
+        article.setPostDate(new Timestamp(new Date().getTime()));
         article.setUser(kyun);
+        articleDao.save(article);
+
 
         List<Comment> comments = new ArrayList<>();
         Comment comment = new Comment();
@@ -47,10 +56,7 @@ public class NukyArticleServiceApplicationTests {
         comment.setArticle(article);
         comment.setUser(wahnna);
         comments.add(comment);
-
-        article.setComments(comments);
-
-        articleDao.save(article);
+        commentDao.saveAll(comments);
 
     }
 
