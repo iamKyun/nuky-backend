@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -38,12 +39,15 @@ public class Comment {
     private String content;
 
     @ManyToOne
+    @JsonIgnore
     private Article article;
 
     @ManyToOne
+    @JsonIgnore
     private Comment replyComment;
 
     @OneToMany(mappedBy = "replyComment", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Collection<Comment> comments;
 
     @ManyToOne
