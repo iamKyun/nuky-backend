@@ -24,4 +24,9 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> getIndexArticles() {
         return articleDao.findTop5ByPostDateNotNullOrderByPostDateDesc();
     }
+
+    @Override
+    public Article getArticleById(Long id) {
+       return articleDao.findById(id).orElse(null);
+    }
 }

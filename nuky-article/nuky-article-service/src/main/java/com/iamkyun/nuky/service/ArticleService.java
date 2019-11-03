@@ -13,4 +13,11 @@ public interface ArticleService {
      * @return
      */
     List<Article> getIndexArticles();
+
+    /**
+     * get article
+     * @param id
+     * @return
+     */
+    Article getArticleById(Long id);
 }
