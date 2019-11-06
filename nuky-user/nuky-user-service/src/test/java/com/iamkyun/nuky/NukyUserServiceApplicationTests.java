@@ -2,7 +2,7 @@ package com.iamkyun.nuky;
 
 import java.util.Optional;
 
-import com.iamkyun.nuky.dao.UserDao;
+import com.iamkyun.nuky.dao.UserRepository;
 import com.iamkyun.nuky.data.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,11 +15,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = NukyUserServiceApplication.class)
 public class NukyUserServiceApplicationTests {
     @Autowired
-    UserDao userDao;
+    UserRepository userRepository;
 
     @Test
     public void contextLoads() {
-        Optional<User> user = userDao.findById(1L);
+        Optional<User> user = userRepository.findById(1L);
         System.out.println("user = " + (user.isPresent() ? user.get() :
                 "empty"));
     }

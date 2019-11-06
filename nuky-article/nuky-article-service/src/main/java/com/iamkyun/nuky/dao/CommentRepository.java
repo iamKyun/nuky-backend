@@ -1,12 +1,14 @@
 package com.iamkyun.nuky.dao;
 
-import com.iamkyun.nuky.data.entity.User;
+import com.iamkyun.nuky.data.entity.Comment;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  * @author kyun
+ *
  */
 @Repository
-public interface UserDao extends JpaRepository<User, Long> {
+public interface CommentRepository extends JpaRepository<Comment, Long> {
 }

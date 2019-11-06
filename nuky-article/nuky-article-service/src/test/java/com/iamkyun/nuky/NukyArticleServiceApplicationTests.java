@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.iamkyun.nuky.dao.ArticleDao;
-import com.iamkyun.nuky.dao.CommentDao;
+import com.iamkyun.nuky.dao.ArticleRepository;
+import com.iamkyun.nuky.dao.CommentRepository;
 import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.data.entity.Comment;
 import com.iamkyun.nuky.data.entity.User;
@@ -23,10 +23,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class NukyArticleServiceApplicationTests {
 
     @Autowired
-    ArticleDao articleDao;
+    ArticleRepository articleRepository;
 
     @Autowired
-    CommentDao commentDao;
+    CommentRepository commentRepository;
 
     @Test
     @Transactional
@@ -41,7 +41,7 @@ public class NukyArticleServiceApplicationTests {
         article.setContent("ddddddddddddddddddddddddddddddddddddddd");
         article.setPostDate(new Timestamp(new Date().getTime()));
         article.setUser(kyun);
-        articleDao.save(article);
+        articleRepository.save(article);
 
 
         List<Comment> comments = new ArrayList<>();
@@ -56,7 +56,7 @@ public class NukyArticleServiceApplicationTests {
         comment.setArticle(article);
         comment.setUser(wahnna);
         comments.add(comment);
-        commentDao.saveAll(comments);
+        commentRepository.saveAll(comments);
 
     }
 
