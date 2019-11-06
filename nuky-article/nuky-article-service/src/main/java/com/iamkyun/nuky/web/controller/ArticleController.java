@@ -1,7 +1,5 @@
 package com.iamkyun.nuky.web.controller;
 
-import java.util.List;
-
 import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.service.ArticleService;
 
@@ -27,11 +25,6 @@ public class ArticleController {
 
     public ArticleController(ArticleService articleService) {
         this.articleService = articleService;
-    }
-
-    @GetMapping("/index")
-    public List<Article> getIndexArticles() {
-        return articleService.getIndexArticles();
     }
 
     @GetMapping("/{id}")

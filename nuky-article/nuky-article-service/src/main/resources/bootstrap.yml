@@ -12,3 +12,7 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+  jpa:
+    properties:
+      hibernate:
+        for

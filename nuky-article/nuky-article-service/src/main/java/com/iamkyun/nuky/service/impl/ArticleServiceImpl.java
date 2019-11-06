@@ -2,8 +2,8 @@ package com.iamkyun.nuky.service.impl;
 
 import java.util.List;
 
-import com.iamkyun.nuky.repository.ArticleRepository;
 import com.iamkyun.nuky.data.entity.Article;
+import com.iamkyun.nuky.repository.ArticleRepository;
 import com.iamkyun.nuky.service.ArticleService;
 
 import org.springframework.data.domain.Page;
@@ -33,10 +33,10 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Page<Article> getArticlePage(Integer pageNum) {
-        if (pageNum == null) {
-            pageNum = 1;
+    public Page<Article> getArticlePage(Integer page) {
+        if (page == null) {
+            page = 1;
         }
-        return articleRepository.findAll(PageRequest.of(pageNum, 5));
+        return articleRepository.findAll(PageRequest.of(page - 1, 5));
     }
 }

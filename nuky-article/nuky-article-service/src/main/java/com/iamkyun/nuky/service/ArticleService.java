@@ -26,8 +26,8 @@ public interface ArticleService {
     /**
      * paged query
      *
-     * @param pageNum
+     * @param page start from 1
      * @return
      */
-    Page<Article> getArticlePage(Integer pageNum);
+    Page<Article> getArticlePage(Integer page);
 }
