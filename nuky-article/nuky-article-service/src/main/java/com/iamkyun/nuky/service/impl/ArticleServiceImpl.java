@@ -2,7 +2,7 @@ package com.iamkyun.nuky.service.impl;
 
 import java.util.List;
 
-import com.iamkyun.nuky.dao.ArticleRepository;
+import com.iamkyun.nuky.repository.ArticleRepository;
 import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.service.ArticleService;
 

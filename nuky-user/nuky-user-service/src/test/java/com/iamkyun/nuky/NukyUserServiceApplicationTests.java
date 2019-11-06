@@ -2,7 +2,7 @@ package com.iamkyun.nuky;
 
 import java.util.Optional;
 
-import com.iamkyun.nuky.dao.UserRepository;
+import com.iamkyun.nuky.repository.UserRepository;
 import com.iamkyun.nuky.data.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;

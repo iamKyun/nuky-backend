@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.dao;
+package com.iamkyun.nuky.repository;
 
 import java.util.List;
 

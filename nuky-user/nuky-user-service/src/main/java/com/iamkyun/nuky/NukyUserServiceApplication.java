@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @author kyun
  */
 @SpringBootApplication
-@EnableJpaRepositories("com.iamkyun.nuky.dao")
+@EnableJpaRepositories("com.iamkyun.nuky.repository")
 @EntityScan({"com.iamkyun.nuky.data.entity"})
 @EnableJpaAuditing
 @EnableCircuitBreaker

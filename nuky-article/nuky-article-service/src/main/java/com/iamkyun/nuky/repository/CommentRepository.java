@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.dao;
+package com.iamkyun.nuky.repository;
 
 import com.iamkyun.nuky.data.entity.Comment;
 
