@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "nuky.article.page-size",
+      "type": "java.lang.Integer",
+      "description": "page size of articles query."
+  }
+] }

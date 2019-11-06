@@ -6,6 +6,7 @@ import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.repository.ArticleRepository;
 import com.iamkyun.nuky.service.ArticleService;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,16 @@ import org.springframework.stereotype.Service;
 public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
 
+    @Value("${nuku.article.pageSize:5}")
+    private Integer pageSize;
+
     public ArticleServiceImpl(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
     }
 
+    public ArticleRepository getArticleRepository() {
+        return articleRepository;
+    }
 
     @Override
     public List<Article> getIndexArticles() {
@@ -37,6 +44,6 @@ public class ArticleServiceImpl implements ArticleService {
         if (page == null) {
             page = 1;
         }
-        return articleRepository.findAll(PageRequest.of(page - 1, 5));
+        return articleRepository.findAll(PageRequest.of(page - 1, pageSize));
     }
 }
