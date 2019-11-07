@@ -3,6 +3,7 @@
     {
       "name": "nuky.article.page-size",
       "type": "java.lang.Integer",
-      "description": "page size of articles query."
-  }
-] }
+      "description": "Description for nuky.article.page-size."
+    }
+  ]
+}

@@ -14,6 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +22,9 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = NukyArticleServiceApplication.class)
 public class NukyArticleServiceApplicationTests {
+
+    @Value("${nuku.article.pageSize:10}")
+    private Integer pageSize;
 
     @Autowired
     ArticleRepository articleRepository;
@@ -58,6 +62,11 @@ public class NukyArticleServiceApplicationTests {
         comments.add(comment);
         commentRepository.saveAll(comments);
 
+    }
+
+    @Test
+    public void testPageSizeConfig() {
+        System.out.println(pageSize);
     }
 
 }

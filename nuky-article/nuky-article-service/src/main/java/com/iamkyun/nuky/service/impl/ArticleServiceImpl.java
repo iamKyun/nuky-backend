@@ -1,7 +1,5 @@
 package com.iamkyun.nuky.service.impl;
 
-import java.util.List;
-
 import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.repository.ArticleRepository;
 import com.iamkyun.nuky.service.ArticleService;
@@ -18,20 +16,11 @@ import org.springframework.stereotype.Service;
 public class ArticleServiceImpl implements ArticleService {
     private final ArticleRepository articleRepository;
 
-    @Value("${nuku.article.pageSize:5}")
+    @Value("${nuky.article.page-size:10}")
     private Integer pageSize;
 
     public ArticleServiceImpl(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
-    }
-
-    public ArticleRepository getArticleRepository() {
-        return articleRepository;
-    }
-
-    @Override
-    public List<Article> getIndexArticles() {
-        return articleRepository.findTop5ByPostDateNotNullOrderByPostDateDesc();
     }
 
     @Override
