@@ -1,5 +1,8 @@
 package com.iamkyun.nuky.web.controller;
 
+import java.util.Collections;
+import java.util.List;
+
 import com.iamkyun.nuky.data.entity.Article;
 import com.iamkyun.nuky.service.ArticleService;
 
@@ -28,6 +31,13 @@ public class ArticleController {
 
     @GetMapping("/articles/page/{pageNumber}")
     public Page<Article> getIndexArticles(@PathVariable(required = false) Integer pageNumber) {
-        return articleService.getArticlePage(pageNumber);
+        Page<Article> articlePage = articleService.getArticlePage(pageNumber);
+        System.out.println("articlePage = " + articlePage);
+        return articlePage;
+    }
+
+    @GetMapping("/articles/popular")
+    public List<Article> getPopularArticles() {
+        return Collections.emptyList();
     }
 }

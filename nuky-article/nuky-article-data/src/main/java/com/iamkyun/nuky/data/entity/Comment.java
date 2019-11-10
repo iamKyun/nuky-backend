@@ -1,7 +1,7 @@
 package com.iamkyun.nuky.data.entity;
 
 import java.sql.Timestamp;
-import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Basic;
@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -38,7 +39,8 @@ public class Comment {
     @Column(name = "content")
     private String content;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "article_id")
     @JsonIgnore
     private Article article;
 
@@ -48,7 +50,7 @@ public class Comment {
 
     @OneToMany(mappedBy = "replyComment", fetch = FetchType.LAZY)
     @JsonIgnore
-    private Collection<Comment> comments;
+    private List<Comment> comments;
 
     @ManyToOne
     private User user;

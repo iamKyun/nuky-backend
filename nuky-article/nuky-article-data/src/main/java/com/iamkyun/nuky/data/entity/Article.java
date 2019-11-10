@@ -1,8 +1,7 @@
 package com.iamkyun.nuky.data.entity;
 
 import java.sql.Timestamp;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -53,27 +52,6 @@ public class Article {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
-    private Collection<Comment> comments;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Article article = (Article) o;
-        return Objects.equals(id, article.id) &&
-                Objects.equals(title, article.title) &&
-                Objects.equals(content, article.content) &&
-                Objects.equals(createDate, article.createDate) &&
-                Objects.equals(postDate, article.postDate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, content, createDate, postDate);
-    }
+    @OneToMany(mappedBy = "article",fetch = FetchType.LAZY)
+    private List<Comment> comments;
 }
