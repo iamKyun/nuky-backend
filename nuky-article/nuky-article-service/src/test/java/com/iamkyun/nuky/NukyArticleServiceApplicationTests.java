@@ -69,4 +69,11 @@ public class NukyArticleServiceApplicationTests {
         System.out.println(pageSize);
     }
 
+    @Test
+    @Transactional
+    public void testLazyLoad(){
+        Article one = articleRepository.getOne(4L);
+        System.out.println(one);
+    }
+
 }

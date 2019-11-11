@@ -2,7 +2,6 @@ package com.iamkyun.nuky.data.entity;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -59,27 +58,4 @@ public class Comment {
     @Basic
     @CreatedDate
     private Timestamp createDate;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof Comment)) {
-            return false;
-        }
-        Comment comment = (Comment) o;
-        return Objects.equals(getId(), comment.getId()) &&
-                Objects.equals(getContent(), comment.getContent()) &&
-                Objects.equals(getArticle(), comment.getArticle()) &&
-                Objects.equals(getReplyComment(), comment.getReplyComment()) &&
-                Objects.equals(getComments(), comment.getComments()) &&
-                Objects.equals(getUser(), comment.getUser()) &&
-                Objects.equals(getCreateDate(), comment.getCreateDate());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getContent(), getArticle(), getReplyComment(), getComments(), getUser(), getCreateDate());
-    }
 }
