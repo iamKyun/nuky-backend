@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.iamkyun.nuky.data.view.PublicPagedQuery;
+import com.iamkyun.nuky.data.view.PublicSingleQuery;
 import lombok.Data;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -32,40 +34,35 @@ public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    @JsonView(PagedQuery.class)
+    @JsonView(PublicPagedQuery.class)
     private Long id;
 
     @Basic
     @Column(name = "title")
-    @JsonView(PagedQuery.class)
+    @JsonView(PublicPagedQuery.class)
     private String title;
 
     @Basic
     @Column(name = "content")
-    @JsonView(PagedQuery.class)
+    @JsonView(PublicPagedQuery.class)
     private String content;
 
     @Basic
     @Column(name = "create_date")
     @CreatedDate
-    @JsonView(PagedQuery.class)
+    @JsonView(PublicPagedQuery.class)
     private Timestamp createDate;
 
     @Basic
     @Column(name = "post_date")
-    @JsonView(PagedQuery.class)
+    @JsonView(PublicPagedQuery.class)
     private Timestamp postDate;
 
     @ManyToOne
-    @JsonView(PagedQuery.class)
+    @JsonView(PublicPagedQuery.class)
     private User user;
 
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonView(SingleQuery.class)
+    @JsonView(PublicSingleQuery.class)
     private List<Comment> comments;
-
-    // paged query view
-    public interface PagedQuery {}
-
-    public interface SingleQuery extends PagedQuery {}
 }
