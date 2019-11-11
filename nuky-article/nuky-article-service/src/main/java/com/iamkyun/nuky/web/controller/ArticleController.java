@@ -1,6 +1,9 @@
 package com.iamkyun.nuky.web.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.iamkyun.nuky.data.entity.Article;
+import com.iamkyun.nuky.data.entity.Article.PagedQuery;
+import com.iamkyun.nuky.data.entity.Article.SingleQuery;
 import com.iamkyun.nuky.service.ArticleService;
 
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -22,11 +25,13 @@ public class ArticleController {
     }
 
     @GetMapping("/article/{id}")
-    public Article testUserService(@PathVariable Long id) {
+    @JsonView(SingleQuery.class)
+    public Article getArticle(@PathVariable Long id) {
         return articleService.getArticleById(id);
     }
 
     @GetMapping("/articles/page/{pageNumber}")
+    @JsonView(PagedQuery.class)
     public Page<Article> getIndexArticles(@PathVariable(required = false) Integer pageNumber) {
         return articleService.getArticlePage(pageNumber);
     }

@@ -1,10 +1,10 @@
 package com.iamkyun.nuky.data.entity;
 
 import java.sql.Timestamp;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -31,49 +32,40 @@ public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @JsonView(PagedQuery.class)
     private Long id;
 
     @Basic
     @Column(name = "title")
+    @JsonView(PagedQuery.class)
     private String title;
 
     @Basic
     @Column(name = "content")
+    @JsonView(PagedQuery.class)
     private String content;
 
     @Basic
     @Column(name = "create_date")
     @CreatedDate
+    @JsonView(PagedQuery.class)
     private Timestamp createDate;
 
     @Basic
     @Column(name = "post_date")
+    @JsonView(PagedQuery.class)
     private Timestamp postDate;
 
     @ManyToOne
+    @JsonView(PagedQuery.class)
     private User user;
 
-    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
-    private Collection<Comment> comments;
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonView(SingleQuery.class)
+    private List<Comment> comments;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Article article = (Article) o;
-        return Objects.equals(id, article.id) &&
-                Objects.equals(title, article.title) &&
-                Objects.equals(content, article.content) &&
-                Objects.equals(createDate, article.createDate) &&
-                Objects.equals(postDate, article.postDate);
-    }
+    // paged query view
+    public interface PagedQuery {}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, content, createDate, postDate);
-    }
+    public interface SingleQuery extends PagedQuery {}
 }
