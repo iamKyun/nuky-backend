@@ -62,8 +62,7 @@ public class Post {
     @JsonView(PublicPagedQuery.class)
     private User user;
 
-    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL, fetch =
-            FetchType.LAZY)
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonView(PublicSingleQuery.class)
     private List<Comment> comments;
 }
