@@ -1,9 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "nuky.article.page-size",
-      "type": "java.lang.Integer",
-      "description": "Description for nuky.article.page-size."
-    }
-  ]
-}
