@@ -54,9 +54,9 @@ public class Post {
     private Timestamp createDate;
 
     @Basic
-    @Column(name = "post_date")
+    @Column(name = "publish_date")
     @JsonView(PublicPagedQuery.class)
-    private Timestamp postDate;
+    private Timestamp publishDate;
 
     @ManyToOne
     @JsonView(PublicPagedQuery.class)
