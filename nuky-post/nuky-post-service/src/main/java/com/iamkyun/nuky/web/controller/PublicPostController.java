@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.iamkyun.nuky.data.entity.Post;
-import com.iamkyun.nuky.data.view.PublicPagedQuery;
-import com.iamkyun.nuky.data.view.PublicSingleQuery;
+import com.iamkyun.nuky.model.entity.Post;
+import com.iamkyun.nuky.model.view.PublicPagedQuery;
+import com.iamkyun.nuky.model.view.PublicSingleQuery;
 import com.iamkyun.nuky.service.PostService;
 
 import org.springframework.cloud.context.config.annotation.RefreshScope;

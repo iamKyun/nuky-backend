@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.iamkyun.nuky.repository.PostRepository;
+import com.iamkyun.nuky.model.entity.Comment;
+import com.iamkyun.nuky.model.entity.Post;
+import com.iamkyun.nuky.model.entity.User;
 import com.iamkyun.nuky.repository.CommentRepository;
-import com.iamkyun.nuky.data.entity.Post;
-import com.iamkyun.nuky.data.entity.Comment;
-import com.iamkyun.nuky.data.entity.User;
+import com.iamkyun.nuky.repository.PostRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

@@ -1,6 +1,6 @@
 package com.iamkyun.nuky.service;
 
-import com.iamkyun.nuky.data.entity.Post;
+import com.iamkyun.nuky.model.entity.Post;
 
 import org.springframework.data.domain.Page;
 

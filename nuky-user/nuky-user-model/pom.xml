@@ -9,10 +9,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<artifactId>nuky-user-data</artifactId>
+	<artifactId>nuky-user-model</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>nuky-user-data</name>
-	<description>nuky-user-data</description>
+	<name>nuky-user-model</name>
+	<description>nuky-user-model</description>
 
 	<properties>
 		<java.version>1.8</java.version>

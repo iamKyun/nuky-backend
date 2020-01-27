@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.data.entity;
+package com.iamkyun.nuky.model.entity;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -16,8 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.iamkyun.nuky.data.view.PublicPagedQuery;
-import com.iamkyun.nuky.data.view.PublicSingleQuery;
+import com.iamkyun.nuky.model.view.PublicPagedQuery;
+import com.iamkyun.nuky.model.view.PublicSingleQuery;
 import lombok.Data;
 
 import org.springframework.data.annotation.CreatedDate;

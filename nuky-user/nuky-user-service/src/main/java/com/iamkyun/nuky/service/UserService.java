@@ -1,6 +1,6 @@
 package com.iamkyun.nuky.service;
 
-import com.iamkyun.nuky.data.entity.User;
+import com.iamkyun.nuky.model.entity.User;
 
 /**
  * @author kyun

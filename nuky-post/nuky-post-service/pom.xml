@@ -68,12 +68,12 @@
 
 		<dependency>
 			<groupId>com.iamkyun</groupId>
-			<artifactId>nuky-post-data</artifactId>
+			<artifactId>nuky-post-model</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>com.iamkyun</groupId>
-			<artifactId>nuky-user-data</artifactId>
+			<artifactId>nuky-user-model</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.iamkyun</groupId>

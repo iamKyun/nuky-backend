@@ -63,7 +63,7 @@
 
         <dependency>
             <groupId>com.iamkyun</groupId>
-            <artifactId>nuky-user-data</artifactId>
+            <artifactId>nuky-user-model</artifactId>
         </dependency>
 
         <dependency>

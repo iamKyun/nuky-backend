@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.data.entity;
+package com.iamkyun.nuky.model.entity;
 
 import java.sql.Timestamp;
 import java.util.Objects;

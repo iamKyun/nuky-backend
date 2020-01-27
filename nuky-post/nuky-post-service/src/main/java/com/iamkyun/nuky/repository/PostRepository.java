@@ -1,6 +1,6 @@
 package com.iamkyun.nuky.repository;
 
-import com.iamkyun.nuky.data.entity.Post;
+import com.iamkyun.nuky.model.entity.Post;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
 package com.iamkyun.nuky.web.cotroller;
 
-import com.iamkyun.nuky.data.entity.User;
+import com.iamkyun.nuky.model.entity.User;
 import com.iamkyun.nuky.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>nuky-user-api</module>
-		<module>nuky-user-data</module>
+		<module>nuky-user-model</module>
 		<module>nuky-user-service</module>
 	</modules>
 
@@ -42,7 +42,7 @@
 			</dependency>
 			<dependency>
 				<groupId>com.iamkyun</groupId>
-				<artifactId>nuky-user-data</artifactId>
+				<artifactId>nuky-user-model</artifactId>
 				<version>${user-data.version}</version>
 			</dependency>
 		</dependencies>

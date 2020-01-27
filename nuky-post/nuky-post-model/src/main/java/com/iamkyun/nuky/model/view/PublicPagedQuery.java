@@ -1,4 +1,4 @@
-package com.iamkyun.nuky.data.view;
+package com.iamkyun.nuky.model.view;
 
 /**
  * @author kyun

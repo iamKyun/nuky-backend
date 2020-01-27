@@ -1,6 +1,6 @@
 package com.iamkyun.nuky.service.impl;
 
-import com.iamkyun.nuky.data.entity.Post;
+import com.iamkyun.nuky.model.entity.Post;
 import com.iamkyun.nuky.repository.PostRepository;
 import com.iamkyun.nuky.service.PostService;
 

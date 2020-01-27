@@ -16,7 +16,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>nuky-post-api</module>
-		<module>nuky-post-data</module>
+		<module>nuky-post-model</module>
 		<module>nuky-post-service</module>
 	</modules>
 
@@ -44,12 +44,12 @@
 			</dependency>
 			<dependency>
 				<groupId>com.iamkyun</groupId>
-				<artifactId>nuky-post-data</artifactId>
+				<artifactId>nuky-post-model</artifactId>
 				<version>${post-data.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.iamkyun</groupId>
-				<artifactId>nuky-user-data</artifactId>
+				<artifactId>nuky-user-model</artifactId>
 				<version>${user-data.version}</version>
 			</dependency>
 			<dependency>

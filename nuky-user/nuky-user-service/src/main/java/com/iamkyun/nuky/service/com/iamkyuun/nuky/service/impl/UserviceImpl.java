@@ -1,7 +1,7 @@
 package com.iamkyun.nuky.service.com.iamkyuun.nuky.service.impl;
 
+import com.iamkyun.nuky.model.entity.User;
 import com.iamkyun.nuky.repository.UserRepository;
-import com.iamkyun.nuky.data.entity.User;
 import com.iamkyun.nuky.service.UserService;
 
 import org.springframework.stereotype.Service;
