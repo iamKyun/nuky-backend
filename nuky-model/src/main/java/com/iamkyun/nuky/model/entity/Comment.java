@@ -1,22 +1,21 @@
 package com.iamkyun.nuky.model.entity;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -26,6 +25,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  *
  */
 @Data
+@EqualsAndHashCode
+@ToString
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class Comment {
@@ -34,28 +35,30 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "replied_comment_id", referencedColumnName = "id")
+    @JsonIgnore
+    private Comment repliedComment;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id", referencedColumnName = "id", nullable = false)
+    @JsonIgnore
+    private Post post;
+
+    @Basic
+    @Column(name = "create_date")
+    @CreatedDate
+    private Timestamp createDate;
+
     @Basic
     @Column(name = "content")
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id")
-    @JsonIgnore
-    private Post post;
-
-    @ManyToOne
-    @JsonIgnore
-    private Comment replyComment;
-
-    @OneToMany(mappedBy = "replyComment", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Comment> comments;
-
-    @ManyToOne
-    private User user;
-
-    @Column(name = "create_date")
     @Basic
-    @CreatedDate
-    private Timestamp createDate;
+    @Column(name = "status")
+    private Integer status;
 }
