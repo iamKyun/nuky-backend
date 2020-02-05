@@ -73,10 +73,6 @@
 
 		<dependency>
 			<groupId>com.iamkyun</groupId>
-			<artifactId>nuky-model</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.iamkyun</groupId>
 			<artifactId>nuky-user-api</artifactId>
 		</dependency>
 
