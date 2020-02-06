@@ -5,14 +5,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.iamkyun</groupId>
-		<artifactId>nuky-post</artifactId>
+		<artifactId>nuky-comment</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<artifactId>nuky-post-api</artifactId>
+	<artifactId>nuky-user-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>nuky-post-api</name>
-	<description>nuky-post-api</description>
+	<name>nuky-comment-api</name>
+	<description>nuky-comment-api</description>
 
 	<dependencies>
 		<dependency>
@@ -27,7 +27,7 @@
 
 		<dependency>
 			<groupId>com.iamkyun</groupId>
-			<artifactId>nuky-post-model</artifactId>
+			<artifactId>nuky-comment-model</artifactId>
 		</dependency>
 	</dependencies>
 
