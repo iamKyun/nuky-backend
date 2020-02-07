@@ -1,19 +1,19 @@
 package com.iamkyun.nuky.web.controller;
 
-import java.util.Collections;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonView;
+import com.iamkyun.nuky.common.PagedData;
 import com.iamkyun.nuky.model.entity.Post;
 import com.iamkyun.nuky.model.view.PublicPagedQuery;
 import com.iamkyun.nuky.model.view.PublicSingleQuery;
 import com.iamkyun.nuky.service.PostService;
-
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author kyun
@@ -35,10 +35,10 @@ public class PublicPostController {
 
     @GetMapping("/posts/page/{pageNumber}")
     @JsonView(PublicPagedQuery.class)
-    public Page<Post> getIndexPosts(@PathVariable(required = false) Integer pageNumber) {
+    public PagedData<Post> getIndexPosts(@PathVariable(required = false) Integer pageNumber) {
         Page<Post> postPage = postService.getPostPage(pageNumber);
         System.out.println("postPage = " + postPage);
-        return postPage;
+        return PagedData.from(postPage);
     }
 
     @GetMapping("/posts/popular")

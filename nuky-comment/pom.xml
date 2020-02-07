@@ -45,6 +45,11 @@
                 <artifactId>nuky-comment-model</artifactId>
                 <version>${comment-model.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.iamkyun</groupId>
+                <artifactId>nuky-common</artifactId>
+                <version>${nuky-common.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
