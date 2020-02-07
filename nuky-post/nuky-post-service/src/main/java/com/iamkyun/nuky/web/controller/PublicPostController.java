@@ -38,7 +38,7 @@ public class PublicPostController {
     public PagedData<Post> getIndexPosts(@PathVariable(required = false) Integer pageNumber) {
         Page<Post> postPage = postService.getPostPage(pageNumber);
         System.out.println("postPage = " + postPage);
-        return PagedData.from(postPage);
+        return PagedData.of(postPage);
     }
 
     @GetMapping("/posts/popular")

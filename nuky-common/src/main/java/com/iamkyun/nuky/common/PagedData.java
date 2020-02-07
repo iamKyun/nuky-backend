@@ -26,7 +26,7 @@ public class PagedData<T> {
         }
     }
 
-    public static <T> PagedData<T> from(Page<T> page) {
+    public static <T> PagedData<T> of(Page<T> page) {
         return new PagedData<T>(page);
     }
 }
