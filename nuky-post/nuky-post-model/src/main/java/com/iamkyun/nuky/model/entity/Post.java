@@ -28,6 +28,15 @@ public class Post {
     @JsonView(PublicPagedQuery.class)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
+
+    @ManyToMany
+    @JoinTable(name = "post_tag", joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+    private List<Tag> tags;
+
     @Basic
     @Column(name = "title")
     @JsonView(PublicPagedQuery.class)
@@ -65,12 +74,8 @@ public class Post {
     @Column(name = "comment_count")
     private Long commentCount;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private Category category;
+    @Basic
+    @Column(name = "views")
+    private Long views;
 
-    @ManyToMany
-    @JoinTable(name = "post_tag", joinColumns = @JoinColumn(name = "post_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id"))
-    private List<Tag> tags;
 }

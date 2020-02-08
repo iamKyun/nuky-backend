@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
+ * paged data
+ *
  * @author kyun
  */
 @Getter
