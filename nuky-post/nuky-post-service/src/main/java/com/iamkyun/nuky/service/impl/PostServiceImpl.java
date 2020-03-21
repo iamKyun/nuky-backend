@@ -1,5 +1,7 @@
 package com.iamkyun.nuky.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.iamkyun.nuky.mapper.PostMapper;
 import com.iamkyun.nuky.model.entity.Post;
@@ -33,6 +35,7 @@ public class PostServiceImpl implements PostService {
         }
         Page<Post> page = new Page<>();
         page.setCurrent(pageNumber);
+        LambdaQueryWrapper<Post> lambdaQuery = Wrappers.lambdaQuery();
         return postMapper.selectPage(page, null);
     }
 }
