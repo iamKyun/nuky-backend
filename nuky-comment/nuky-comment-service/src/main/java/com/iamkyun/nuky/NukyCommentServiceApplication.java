@@ -1,20 +1,16 @@
 package com.iamkyun.nuky;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * @author kyun
  */
 @SpringBootApplication
-@EnableJpaRepositories("com.iamkyun.nuky.repository")
-@EntityScan({"com.iamkyun.nuky.data.entity"})
-@EnableJpaAuditing
 @EnableCircuitBreaker
+@MapperScan("com.iamkyun.nuky.mapper")
 public class NukyCommentServiceApplication {
 
     public static void main(String[] args) {
