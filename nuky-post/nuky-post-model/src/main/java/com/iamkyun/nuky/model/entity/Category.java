@@ -18,5 +18,5 @@ public class Category {
 
     private String slug;
 
-    private Category parent;
+    private String parentId;
 }

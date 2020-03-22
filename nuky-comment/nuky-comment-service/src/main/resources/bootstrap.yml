@@ -5,7 +5,7 @@ eureka:
 
 spring:
   application:
-    name: user
+    name: comment
   cloud:
     config:
       discovery:

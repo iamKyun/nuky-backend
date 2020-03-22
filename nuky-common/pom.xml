@@ -14,8 +14,15 @@
     <artifactId>nuky-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>Common Objects And Utils for Nuky Project</description>
-
+    <properties>
+        <mp.version>3.3.1</mp.version>
+    </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mp.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

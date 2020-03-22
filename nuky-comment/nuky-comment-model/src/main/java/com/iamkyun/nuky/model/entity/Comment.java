@@ -18,7 +18,7 @@ public class Comment {
 
     private Comment repliedComment;
 
-    private User user;
+    private String userId;
 
     private Long postId;
 

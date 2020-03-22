@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * @author kyun
@@ -24,6 +23,4 @@ public class User {
     private Timestamp createDate;
 
     private String ip;
-
-    private List<Comment> comments;
 }

@@ -1,7 +1,7 @@
 package com.iamkyun.nuky.common;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Getter;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -13,18 +13,18 @@ import java.util.List;
 @Getter
 public class PagedData<T> {
     private long totalElements;
-    private int totalPages;
-    private int pageNumber;
-    private int pageSize;
+    private long totalPages;
+    private long pageNumber;
+    private long pageSize;
     private List<T> content;
 
     private PagedData(Page<T> page) {
         if (page != null) {
-            this.totalElements = page.getTotalElements();
-            this.totalPages = page.getTotalPages();
-            this.pageNumber = page.getPageable().getPageNumber();
-            this.pageSize = page.getPageable().getPageSize();
-            this.content = page.getContent();
+            this.totalElements = page.getTotal();
+            this.totalPages = page.getPages();
+            this.pageNumber = page.getCurrent();
+            this.pageSize = page.getSize();
+            this.content = page.getRecords();
         }
     }
 

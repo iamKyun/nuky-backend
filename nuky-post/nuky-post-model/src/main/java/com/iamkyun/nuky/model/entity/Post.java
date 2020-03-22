@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * @author kyun
@@ -17,9 +16,7 @@ import java.util.List;
 public class Post {
     private Long id;
 
-    private Category category;
-
-    private List<Tag> tags;
+    private String categoryId;
 
     private String title;
 
