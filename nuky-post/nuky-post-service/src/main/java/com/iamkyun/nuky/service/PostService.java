@@ -1,8 +1,7 @@
 package com.iamkyun.nuky.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.iamkyun.nuky.model.entity.Post;
-
-import org.springframework.data.domain.Page;
 
 /**
  * @author kyun
