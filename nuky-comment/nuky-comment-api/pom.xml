@@ -9,7 +9,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<artifactId>nuky-user-api</artifactId>
+	<artifactId>nuky-comment-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>nuky-comment-api</name>
 	<description>nuky-comment-api</description>
