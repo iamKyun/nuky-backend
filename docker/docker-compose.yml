@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nuky-db:
+    image: mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  nuky-mq:
+    image: rabbitmq
+      - 5672:5672
+      - 15672:15672

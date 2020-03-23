@@ -1,0 +1,3 @@
+FROM openjdk:8u242
+MAINTAINER Kyun "kyun.c137@gmail.com"
+ENV REFRESHED_AT 20200323
