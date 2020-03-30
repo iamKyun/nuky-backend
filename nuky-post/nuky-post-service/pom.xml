@@ -13,9 +13,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>nuky-post-service</name>
     <description>nuky-post-service</description>
-    <properties>
-        <mp.version>3.3.1</mp.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -61,12 +58,16 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mp.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.iamkyun</groupId>
+            <artifactId>nuky-comment-api</artifactId>
         </dependency>
 
         <dependency>
