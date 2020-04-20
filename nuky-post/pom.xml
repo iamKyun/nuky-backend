@@ -30,6 +30,7 @@
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
         <post-model.version>0.0.1-SNAPSHOT</post-model.version>
         <nuky-common.version>0.0.1-SNAPSHOT</nuky-common.version>
+        <mp.version>3.3.1</mp.version>
     </properties>
 
     <dependencyManagement>
@@ -42,9 +43,19 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mp.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.iamkyun</groupId>
                 <artifactId>nuky-post-model</artifactId>
                 <version>${post-model.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.iamkyun</groupId>
+                <artifactId>nuky-comment-api</artifactId>
+                <version>${nuky-common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.iamkyun</groupId>

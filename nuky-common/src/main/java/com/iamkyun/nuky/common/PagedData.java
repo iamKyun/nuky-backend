@@ -1,9 +1,8 @@
 package com.iamkyun.nuky.common;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 /**
  * paged data
