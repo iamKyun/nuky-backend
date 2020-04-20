@@ -9,5 +9,10 @@ services:
       MYSQL_ROOT_PASSWORD: root
   nuky-mq:
     image: rabbitmq
+    ports:
       - 5672:5672
       - 15672:15672
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: nuky
+      RABBITMQ_DEFAULT_PASS: nuky
